@@ -81,6 +81,8 @@ export class MdlSelectComponent extends SearchableComponent implements ControlVa
     set isFloatingLabel(value) { this._isFloatingLabel = toBoolean(value); }
     @Input() placeholder: string = '';
     @Input() multiple: boolean = false;
+    @Input() arrowUp: string = 'keyboard_arrow_down';
+    @Input() arrowDown: string = 'keyboard_arrow_down';
     @Output() change: EventEmitter<any> = new EventEmitter(true);
     @Output() inputChange: EventEmitter<any> = new EventEmitter(true);
     @ViewChild('selectInput') selectInput: ElementRef;
