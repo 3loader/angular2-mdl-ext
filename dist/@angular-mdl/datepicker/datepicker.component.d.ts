@@ -1,0 +1,32 @@
+import { InjectionToken } from '@angular/core';
+import { MdlButtonComponent, MdlDialogReference } from '@angular-mdl/core';
+import * as moment from 'moment';
+import { DatePickerOptions } from './datepicker.service';
+export declare const CURRENT_DATE: InjectionToken<Date>;
+export declare const DATEPICKER_CONFIG: InjectionToken<DatePickerOptions>;
+export declare class DatePickerDialogComponent {
+    private dialog;
+    private initialDate;
+    private options;
+    okButton: MdlButtonComponent;
+    okLabel: string;
+    cancelLabel: string;
+    mDate: moment.Moment;
+    private _mCurrentMonth;
+    mCurrentMonth: moment.Moment;
+    prevEnabled: boolean;
+    nextEnabled: boolean;
+    monthGridWeekDays: string[];
+    monthGridDays: any[];
+    constructor(dialog: MdlDialogReference, initialDate: Date, options: DatePickerOptions);
+    onEsc(): void;
+    onOk(): void;
+    onCancel(): void;
+    prevMonth(): void;
+    nextMonth(): void;
+    private calculateMonthGrid();
+    private createMonthRow(mDate, week);
+    isActualDate(day: moment.Moment): boolean;
+    private isCurrentMonth(day);
+    setCurrentDay(day: moment.Moment): void;
+}
